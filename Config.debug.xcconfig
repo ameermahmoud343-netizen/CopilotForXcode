@@ -1,17 +1,35 @@
-#include "Version.xcconfig"
-SLASH = / // Otherwise a double slash is treated as a comment, even inside a quoted string
+name: kayan_app
+description: تطبيق كيان مع ميزات AI وريلز
+publish_to: 'none'
+version: 1.0.0+1
 
-HOST_APP_NAME = GitHub Copilot for Xcode Dev
-BUNDLE_IDENTIFIER_BASE = dev.com.github.CopilotForXcode
-SPARKLE_FEED_URL = https:$(SLASH)$(SLASH)githubcopilotide.z13.web.core.windows.net/appcast.xml
-SPARKLE_PUBLIC_KEY = EGlZbKpzATrZFfzr142PrZbmQr5opzdC8urMU8+dKL0=
-APPLICATION_SUPPORT_FOLDER = dev.com.github.CopilotForXcode
-EXTENSION_BUNDLE_NAME = GitHub Copilot Dev
-EXTENSION_BUNDLE_DISPLAY_NAME = GitHub Copilot Dev
-EXTENSION_SERVICE_NAME = GitHub Copilot for Xcode Extension
-COPILOT_DOCS_URL = https:$(SLASH)$(SLASH)docs.github.com/en/copilot
-COPILOT_FORUM_URL = https:$(SLASH)$(SLASH)github.com/orgs/community/discussions/categories/copilot
+environment:
+  sdk: ">=2.17.0 <3.0.0"
 
-// see also target Configs
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  provider: ^6.0.5
+  http: ^0.13.5
+  shared_preferences: ^2.0.17
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.18.0
+  webview_flutter: ^4.2.2
+  google_fonts: ^4.0.4
+  flutter_launcher_icons: ^0.13.1
 
-#include? "Config.local.xcconfig"
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo.png"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
